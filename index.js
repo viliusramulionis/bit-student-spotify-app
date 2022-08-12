@@ -2,6 +2,8 @@ import express from 'express'
 import multer from 'multer'
 import path from 'path'
 
+const port = process.env.PORT || 3000
+
 //Konfigūracija nuotraukų priėmimui
 const storage = multer.diskStorage({
     //Kuriame kataloge bus saugomos nuotraukos
@@ -52,4 +54,4 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('./templates/index.html'))
 })
 
-app.listen(3000)
+app.listen(port)
